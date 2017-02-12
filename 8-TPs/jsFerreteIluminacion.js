@@ -8,7 +8,70 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
+
 function CalcularPrecio () 
 {
+	var PrecioDescuento
+	var CantidadLamparas;
+	CantidadLamparas = document.getElementById('Cantidad').value;
+	var Precio = CantidadLamparas * 35;
+	Precio = parseInt(Precio);
+
+ 	var MarcaUno 
+ 	MarcaUno = document.getElementById('Marca').value;
+ 	if (CantidadLamparas > 5)
+ 	{
+ 		PrecioDescuento = Precio - (Precio * 0.50);
+ 		document.getElementById('precioDescuento').value = PrecioDescuento;
+ 	}
  	
-}
+ 	if(CantidadLamparas == 5 && MarcaUno == "ArgentinaLuz")
+ 	{
+ 		PrecioDescuento = Precio - (Precio * 0.40);
+ 		document.getElementById('precioDescuento').value = PrecioDescuento
+ 	}
+ 		
+ 	if(CantidadLamparas == 5 && MarcaUno != "ArgentinaLuz")
+ 	{
+ 		PrecioDescuento = Precio - (Precio * 0.30)
+ 		document.getElementById('precioDescuento').value = PrecioDescuento;
+ 	}	     
+ 	
+ 	if(CantidadLamparas == 4 && MarcaUno == "ArgentinaLuz" || MarcaUno == "“FelipeLamparas”")
+ 	{
+ 		PrecioDescuento = Precio - (Precio * 0.25);
+ 		document.getElementById('precioDescuento').value = PrecioDescuento;
+ 	}
+ 	
+ 	if(CantidadLamparas == 4 && MarcaUno != "ArgentinaLuz" && MarcaUno != "“FelipeLamparas”")
+ 	{
+ 		PrecioDescuento = Precio - (Precio * 0.20);
+ 		document.getElementById('precioDescuento').value = PrecioDescuento;
+ 	}	
+ 	
+ 	if(CantidadLamparas == 3 && MarcaUno == "ArgentinaLuz")
+ 	{
+ 		PrecioDescuento = Precio - (Precio * 0.15);
+ 		document.getElementById('precioDescuento').value = PrecioDescuento;
+ 	}
+ 	
+ 	if(CantidadLamparas == 3 && MarcaUno == "“FelipeLamparas”")
+ 	{
+ 		PrecioDescuento = Precio - (Precio * 0.10);
+ 		document.getElementById('precioDescuento').value = PrecioDescuento;
+ 	}
+ 	
+ 	if(CantidadLamparas == 3 && MarcaUno != "ArgentinaLuz" && MarcaUno != "“FelipeLamparas”")
+ 	{
+ 		PrecioDescuento = Precio - (Precio * 0.5);
+ 		document.getElementById('precioDescuento').value = PrecioDescuento;
+ 	}
+ 		
+ 	if(PrecioDescuento > 120)
+ 	{
+ 		var Impuesto = (PrecioDescuento * 0.10);
+ 		PrecioDescuento = PrecioDescuento + Impuesto;
+ 		document.getElementById('precioDescuento').value = PrecioDescuento;
+ 		alert("IIBB Usted pago " + PrecioDescuento + " siendo " + Impuesto + " el impuesto que se pago");
+ 	}
+ }
