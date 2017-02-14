@@ -13,11 +13,11 @@ function Mostrar()
     {
     	if (Edad < 13)
     	{
-    		alert("Usted es un niño")
+    		alert("Usted es un niño");
     	}
     	else
     	{
-    		alert("Usted es un adolecente")
+    		alert("Usted es un adolecente");
     	}
     }
 /*
