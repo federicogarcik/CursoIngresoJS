@@ -9,6 +9,7 @@ de no ser igual se debe informar si “falta…”  para llegar al número secre
 */
 var numeroSecreto; 
 var contadorIntentos;
+contadorIntentos = 0;
 
 function comenzar()
 {
@@ -17,15 +18,16 @@ function comenzar()
 		//alert(numeroSecreto );
 	numeroSecreto = Math.floor((Math.random() * 100) + 1);
 	alert ("Numero secreto generado");
+	document.getElementById('nuemro').value = 0;
 	
 
 }
 
 function verificar()
 {
-	//Falta el contador
+	
 	var NumeroIntroducido = document.getElementById('numero').value;
-	contadorIntentos = 0;
+	contadorIntentos = contadorIntentos + 1;
 	document.getElementById('intentos').value = contadorIntentos;
 	if(NumeroIntroducido == numeroSecreto)
 	{
