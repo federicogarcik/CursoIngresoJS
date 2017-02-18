@@ -17,8 +17,10 @@ function comenzar()
 	 
 		//alert(numeroSecreto );
 	numeroSecreto = Math.floor((Math.random() * 100) + 1);
-	alert ("Numero secreto generado");
-	document.getElementById('nuemro').value = 0;
+	alert("Numero secreto generado");
+	document.getElementById('intentos').value = 0;
+	console.log(numeroSecreto);
+	contadorIntentos = 0;
 	
 
 }
