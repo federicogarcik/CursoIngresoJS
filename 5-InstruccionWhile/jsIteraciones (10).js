@@ -62,8 +62,8 @@ function Mostrar()
         5-El nombre del hombre con mejor nota
         6-Promedio de nota de los hombres
         7-Promedio de nota de las mujeres
-        8-PORCEBTAJE DE ABROVADOS VERSUS DESAPROBADO
-        9-EL SEXO Y EL NOMBRE DE LA PRIMER PERSONA QUE SE SAQUE DIEZ 
+        8-Porcentaje de aprobados versus porcentaje de desaprobados
+        9-El sexo y el nombre de la primera persona que saque diez
         */
 
       
