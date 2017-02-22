@@ -16,6 +16,21 @@ function Mostrar()
     var MasViejo;
     var EdadMasViejo;
     var ContadorMujeresApro = 0;
+    var ContadorHombresAproMayores = 0;
+    var ContadorMujeresMenores = 0;
+    var NombreMujerMejorNota;
+    var MejorNotaMujer;
+    var SumaNotaHombres;
+    var SumaNotaMujeres;
+    var ContadorNotaHombre = 0;
+    var ContadorNotaMujer = 0;
+    var PromedioNotaHombre;
+    var PromedioNotaMujer;
+    var ContadorAprobados;
+    var ContadorDesaprobados;
+    var NombreDiez;
+    var SexoDiez;
+    var ContadorDiez = 0;
 
     while(Respuesta == "si")
     {
@@ -30,9 +45,24 @@ function Mostrar()
 
         Edad = prompt("Por favor ingrese su edad");
         Edad = parseInt(Edad);
-        //Validar Edad sexo y nombre
+        while(Edad > 100 || Edad < 0)
+        {
+            alert("Esa no es una edad valida");
+            Edad = prompt("Por favor ingrese su edad");
+        }
         Nombre = prompt("Por favor ingrese su nombre");
+        while(Nombre != String) 
+        {
+            alert("Ese no es un nombre valido");
+            Nombre = prompt("Por favor ingrese su nombre");
+        }
         Sexo = prompt("Por favor introdusca su sexo");
+        while(!(Sexo == "f" || Sexo == "m"))
+        {
+            alert("Ese no es un sexo valido");
+            Sexo = prompt("Por favor Introdusca su sexo");
+
+        }
         /*Aca termino la carga y validacion de datos  
         Comenzamos a hacer las operaciones necesarias*/
 
@@ -53,10 +83,69 @@ function Mostrar()
         if(Sexo == "f" && Nota > 3)
         {
         	ContadorMujeresApro = ContadorMujeresApro + 1
+        }    
+        if(Sexo == "f" && Edad < 20)
+        {
+            ContadorMujeresMenores = ContadorMujeresMenores + 1;
+        }  
+        if(Sexo == "m" && Nota > 3 && Edad > 25)
+        {
+            ContadorHombresAproMayores = ContadorHombresAproMayores + 1;
+        }   
+        if(Contador == 0)
+        {
+            MejorNotaMujer = Nota;
+            NombreMujerMejorNota = Nombre;
         }
+        else
+        {
+            if(Nota > MejorNotaMujer)
+            {
+                MejorNotaMujer = Nota;
+                NombreMujerMejorNota = Nombre;
+            }
+        }
+        if(Contador == 0)
+        {
+            MejorNotaHombre = Nota;
+            NombreHombreMejorNota = Nombre;
+        }
+        else
+        {
+            if(Nota > MejorNotaMujer)
+            {
+                MejorNotaHombre = Nota;
+                NombreHombreMejorNota = Nombre;
+            }
+        }
+        if(Sexo == "m")
+        {
+            SumaNotaHombres = SumaNotaHombres + Nota;
+            ContadorNotaHombre = ContadorNotaHombre + 1;
+        }
+        else
+        {
+            SumaNotaMujeres = SumaNotaMujeres + Nota;
+            ContadorNotaMujer = ContadorNotaMujer + 1;
+        }
+        if(Nota > 3)
+        {
+            ContadorAprobados = ContadorAprobados + 1
+        }
+        else
+        {
+            ContadorDesaprobados = ContadorDesaprobados + 1
+        }
+        if(ContadorDiez == 0 && Nota == 10)
+        {
+            NombreDiez = Nombre;
+            SexoDiez = Sexo;
+            ContadorDiez = ContadorDiez + 1;
+        }
+
         /*
-        1-Cantidad de mujeres aprobadas
-        2-Cantidad de hombres mayores a 25 aprobados
+        1-Cantidad de mujeres aprobadas 
+        2-Cantidad de hombres mayores a 25 aprobados 
         3-Cantidad de mujeres menores a 20 años
         4-El nombre de la mujer con mejor nota
         5-El nombre del hombre con mejor nota
@@ -74,8 +163,18 @@ function Mostrar()
         Respuesta = prompt("Ingrese la letra s para continuar");
     }
     PromedioNota = SumaNota / Contador;
+    PromedioNotaHombre = SumaNotaHombres / ContadorNotaHombre;
+    PromedioNotaMujer = SumaNotaMujeres / ContadorNotaMujer;
+    PorcentajeAprobados = ContadorAprobados * 100 / Contador;
+    PorcentajeDesaprobados = ContadorDesaprobados * 100 / Contador;
     console.log(PromedioNota);
-    document.write("La cantidad de mujeres aprobadas es : " + ContadorMujeresApro);
+    document.write("La cantidad de mujeres aprobadas es: " + ContadorMujeresApro + "<BR>");
+    document.write("La cantidad de hombres mayores a 25 abrobados es: " + ContadorHombresAproMayores + "<BR>");
+    document.write("La cantidad de mujeres menores a 20 es: " + ContadorMujeresMenores + "<BR>");
+    document.write("La mujer con mejor nota es: " + NombreMujerMejorNota + "<BR>");
+    document.write("El hombre con mejor nota es: " + NombreHombreMejorNota + "<BR>");
+    document.write("El procentaje de aprobados es de: " + PorcentajeAprobados + "% " + "<BR>");
+    document.write("El porcentaje de desaprobados es de: " + PorcentajeDesaprobados + "%" + "<BR>");
 
 
 /*
