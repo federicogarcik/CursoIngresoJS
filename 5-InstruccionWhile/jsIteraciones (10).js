@@ -19,15 +19,16 @@ function Mostrar()
     var ContadorHombresAproMayores = 0;
     var ContadorMujeresMenores = 0;
     var NombreMujerMejorNota;
-    var MejorNotaMujer;
-    var SumaNotaHombres;
-    var SumaNotaMujeres;
+    var NombreHombreMejorNota;
+    var MejorNotaMujer = 0;
+    var SumaNotaHombres = 0;
+    var SumaNotaMujeres = 0;
     var ContadorNotaHombre = 0;
     var ContadorNotaMujer = 0;
     var PromedioNotaHombre;
     var PromedioNotaMujer;
-    var ContadorAprobados;
-    var ContadorDesaprobados;
+    var ContadorAprobados = 0;
+    var ContadorDesaprobados = 0;
     var NombreDiez;
     var SexoDiez;
     var ContadorDiez = 0;
@@ -51,7 +52,7 @@ function Mostrar()
             Edad = prompt("Por favor ingrese su edad");
         }
         Nombre = prompt("Por favor ingrese su nombre");
-        while(Nombre != String) 
+        while(Nombre != isNaN(Nombre))
         {
             alert("Ese no es un nombre valido");
             Nombre = prompt("Por favor ingrese su nombre");
@@ -65,7 +66,7 @@ function Mostrar()
         }
         /*Aca termino la carga y validacion de datos  
         Comenzamos a hacer las operaciones necesarias*/
-
+/*
         if(Contador == 0)
         {
         	MasViejo = Nombre;
@@ -92,7 +93,7 @@ function Mostrar()
         {
             ContadorHombresAproMayores = ContadorHombresAproMayores + 1;
         }   
-        if(Contador == 0)
+        if(Contador == 0 && Sexo == "f" )
         {
             MejorNotaMujer = Nota;
             NombreMujerMejorNota = Nombre;
@@ -105,14 +106,14 @@ function Mostrar()
                 NombreMujerMejorNota = Nombre;
             }
         }
-        if(Contador == 0)
+        if(Contador == 0 && Sexo == "m")
         {
             MejorNotaHombre = Nota;
             NombreHombreMejorNota = Nombre;
         }
         else
         {
-            if(Nota > MejorNotaMujer)
+            if(Nota > MejorNotaHombre)
             {
                 MejorNotaHombre = Nota;
                 NombreHombreMejorNota = Nombre;
@@ -142,7 +143,7 @@ function Mostrar()
             SexoDiez = Sexo;
             ContadorDiez = ContadorDiez + 1;
         }
-
+*/
         /*
         1-Cantidad de mujeres aprobadas 
         2-Cantidad de hombres mayores a 25 aprobados 
@@ -156,6 +157,70 @@ function Mostrar()
         */
 
       
+        switch(Sexo)
+        {
+            case "f":
+                if(Nota > 3)
+                {
+                    ContadorMujeresApro = ContadorMujeresApro + 1
+                }     
+                if(Edad < 20)
+                {
+                    ContadorMujeresMenores = ContadorMujeresMenores + 1;
+                }  
+                if(Contador == 0 )
+                {
+                    MejorNotaMujer = Nota;
+                    NombreMujerMejorNota = Nombre;
+                }
+                else
+                {
+                    if(Nota > MejorNotaMujer)
+                    {
+                        MejorNotaMujer = Nota;
+                        NombreMujerMejorNota = Nombre;
+                    }
+                }
+                SumaNotaMujeres = SumaNotaMujeres + Nota;
+                ContadorNotaMujer = ContadorNotaMujer + 1;
+                break
+
+            case "m":
+                if(Nota > 3 && Edad > 25)
+                {
+                    ContadorHombresAproMayores = ContadorHombresAproMayores + 1;
+                }
+                if(Contador == 0)
+                {
+                    MejorNotaHombre = Nota;
+                    NombreHombreMejorNota = Nombre;
+                }
+                else
+                {
+                    if(Nota > MejorNotaHombre)
+                    {
+                        MejorNotaHombre = Nota;
+                        NombreHombreMejorNota = Nombre;
+                    }
+                }   
+                SumaNotaHombres = SumaNotaHombres + Nota;
+                ContadorNotaHombre = ContadorNotaHombre + 1;
+                break
+        }        
+        if(Nota > 3)
+        {
+            ContadorAprobados = ContadorAprobados + 1;
+        }
+        else
+        {
+            ContadorDesaprobados = ContadorDesaprobados + 1;
+        }
+        if(ContadorDiez == 0 && Nota == 10)
+        {
+            NombreDiez = Nombre;
+            SexoDiez = Sexo;
+            ContadorDiez = ContadorDiez + 1;
+        }
         
 
 
