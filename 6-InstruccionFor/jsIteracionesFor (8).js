@@ -17,6 +17,17 @@ function Mostrar()
     var ContadorNueve = 0;
     var ContadorDiez = 0;
     var ContadorCero = 0;
+    var PorcentajeUno;
+    var PorcentajeDos;
+    var PorcentajeTres;
+    var PorcentajeCuatro;
+    var PorcentajeCinco;
+    var PorcentajeSeis;
+    var PorcentajeSiete;
+    var PorcentajeOcho;
+    var PorcentajeNueve;
+    var PorcentajeDiez;
+    var PorcentajeCero;
 
     for(var ContadorFor = 0 ; ContadorFor < 100000 ; ContadorFor++)
     {
@@ -59,16 +70,27 @@ function Mostrar()
     		   break    		      
     	}
     }
-        document.write("El numero uno salio un total de " + CantidadUno + " veces y el porcentaje es " + PorcentajeUno + "<BR>");
-    	document.write("El numero dos salio un total de " + CantidadDos + " veces y el porcentaje es " + PorcentajeDos + "<BR>");
-    	document.write("El numero tres salio un total de " + CantidadTres + " veces y el porcentaje es " + PorcentajeTres + "<BR>");
-    	document.write("El numero cuatro salio un total de " + CantidadCuatro + " veces y el porcentaje es " + PorcentajeCuatro + "<BR>");
-    	document.write("El numero cinco salio un total de " + CantidadCinco + " veces y el porcentaje es " + PorcentajeCinco + "<BR>");
-    	document.write("El numero seis salio un total de " + CantidadSeis + " veces y el porcentaje es " + PorcentajeSeis + "<BR>");
-    	document.write("El numero siete salio un total de " + CantidadSiete + " veces y el porcentaje es"+ PorcentajeSiete + "<BR>");
-    	document.write("El numero ocho salio un total de " + CantidadOcho + " veces y el porcentaje es " + PorcentajeOcho + "<BR>");
-        document.write("El numero nueve salio un total de " + CantidadNueve + " veces y el porcentaje es " + PorcentajeNueve + "<BR>");
-    	document.write("El numero diez salio un total de " + CantidadDiez + " veces y el porcentaje es " + PorcentajeDiez + "<BR>");
-    	document.write("El numero cero salio un total de " + CantidadCero + " veces y el porcentaje es " + PorcentajeCero + "<BR>");
-    	//FALTA DEFINIR VARIABLES , HACER CALCULOS Y TESTEAR
+    PorcentajeUno = (ContadorUno * 100) / 100000;
+    PorcentajeDos = (ContadorDos * 100) / 100000;
+    PorcentajeTres = (ContadorTres * 100) / 100000;
+    PorcentajeCuatro = (ContadorCuatro * 100) / 100000;
+    PorcentajeCinco = (ContadorCinco * 100) / 100000;
+    PorcentajeSeis = (ContadorSeis * 100) / 100000;
+    PorcentajeSiete = (ContadorSiete * 100) / 100000;
+    PorcentajeOcho = (ContadorOcho * 100) / 100000;
+    PorcentajeNueve = (ContadorNueve * 100) / 100000;
+    PorcentajeDiez = (ContadorDiez * 100) / 100000;
+    PorcentajeCero = (ContadorCero * 100) / 100000;a
+
+    document.write("El numero uno salio un total de " + ContadorUno + " veces y el porcentaje es " + PorcentajeUno + "<BR>");
+    document.write("El numero dos salio un total de " + ContadorDos + " veces y el porcentaje es " + PorcentajeDos + "<BR>");
+    document.write("El numero tres salio un total de " + ContadorTres + " veces y el porcentaje es " + PorcentajeTres + "<BR>");
+    document.write("El numero cuatro salio un total de " + ContadorCuatro + " veces y el porcentaje es " + PorcentajeCuatro + "<BR>");
+    document.write("El numero cinco salio un total de " + ContadorCinco + " veces y el porcentaje es " + PorcentajeCinco + "<BR>");
+    document.write("El numero seis salio un total de " + ContadorSeis + " veces y el porcentaje es " + PorcentajeSeis + "<BR>");
+    document.write("El numero siete salio un total de " + ContadorSiete + " veces y el porcentaje es"+ PorcentajeSiete + "<BR>");
+    document.write("El numero ocho salio un total de " + ContadorOcho + " veces y el porcentaje es " + PorcentajeOcho + "<BR>");
+    document.write("El numero nueve salio un total de " + ContadorNueve + " veces y el porcentaje es " + PorcentajeNueve + "<BR>");
+    document.write("El numero diez salio un total de " + ContadorDiez + " veces y el porcentaje es " + PorcentajeDiez + "<BR>");
+    document.write("El numero cero salio un total de " + ContadorCero + " veces y el porcentaje es " + PorcentajeCero + "<BR>");
 }//FIN DE LA FUNCIÓN
