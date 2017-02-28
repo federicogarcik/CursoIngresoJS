@@ -53,7 +53,7 @@ function Mostrar()
     		case 5:
     		   ContadorCinco++;
     		   break
-    		case 6;
+    		case 6:
     		   ContadorSeis++;
     		   break
     		case 7:
@@ -80,7 +80,7 @@ function Mostrar()
     PorcentajeOcho = (ContadorOcho * 100) / 100000;
     PorcentajeNueve = (ContadorNueve * 100) / 100000;
     PorcentajeDiez = (ContadorDiez * 100) / 100000;
-    PorcentajeCero = (ContadorCero * 100) / 100000;a
+    PorcentajeCero = (ContadorCero * 100) / 100000;
 
     document.write("El numero uno salio un total de " + ContadorUno + " veces y el porcentaje es " + PorcentajeUno + "<BR>");
     document.write("El numero dos salio un total de " + ContadorDos + " veces y el porcentaje es " + PorcentajeDos + "<BR>");
