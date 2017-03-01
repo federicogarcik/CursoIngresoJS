@@ -2,10 +2,34 @@ function Mostrar()
   /*al generar numeros random del 0 al 10 se debe contar la cantidad de cada una de estas cifras, repetir
    la iteracion para lanzar el random cien mil veces e informar:*/
 {
+    var NumeroIngresado;
+    var NumeroAnterior;
+    var TieneDivisor = "no";
+    var NumeroRecorrido
+    NumeroIngresado = prompt("Ingrese un numero");
+    NumeroIngresado = parseInt(NumeroIngresado);
 
+    for(NumeroRecorrido = NumeroIngresado - 1; NumeroRecorrido > 0  ; NumeroRecorrido--)
+    {
+        TieneDivisor = "no";
+        for(NumeroAnterior = 2 ; NumeroAnterior <= (NumeroRecorrido/2) ; NumeroAnterior++)
+        {
+            TieneDivisor = "no";
+            if(NumeroRecorrido % NumeroAnterior == 0)
+            {
+                TieneDivisor = "Si";
+                break;
+            }
+        }
+
+        if(TieneDivisor == "no")
+        {
+            console.log("Es primo" + NumeroRecorrido);
+        }
+    }
 	//1- la cantidad de veces que salio el numero del 0 al 10
     //2- el porcentaje de veces que salio cada numero con respecto al total 
-    var Numero;
+   /* var Numero;
     var ContadorUno = 0;
     var ContadorDos = 0;
     var ContadorTres = 0;
@@ -92,5 +116,5 @@ function Mostrar()
     document.write("El numero ocho salio un total de " + ContadorOcho + " veces y el porcentaje es " + PorcentajeOcho + "<BR>");
     document.write("El numero nueve salio un total de " + ContadorNueve + " veces y el porcentaje es " + PorcentajeNueve + "<BR>");
     document.write("El numero diez salio un total de " + ContadorDiez + " veces y el porcentaje es " + PorcentajeDiez + "<BR>");
-    document.write("El numero cero salio un total de " + ContadorCero + " veces y el porcentaje es " + PorcentajeCero + "<BR>");
+    document.write("El numero cero salio un total de " + ContadorCero + " veces y el porcentaje es " + PorcentajeCero + "<BR>");*/
 }//FIN DE LA FUNCIÓN
