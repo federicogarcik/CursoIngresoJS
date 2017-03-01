@@ -8,7 +8,7 @@ function Mostrar()
     var AcumDiv = 1;
 
 
-    for(NumeroRecorrido = NumeroIngresado; NumeroRecorrido > 0;NumeroRecorrido--)
+    for(NumeroRecorrido = NumeroIngresado ; NumeroRecorrido > 0 ; NumeroRecorrido--)
     {
     	AcumDiv = 1;
     	for(NumeroAnterior = 2 ; NumeroAnterior < NumeroRecorrido ; NumeroAnterior++)
@@ -29,24 +29,4 @@ function Mostrar()
         }
 
     }    
-
-/*
-
-    for(NumeroAnterior = 2 ; NumeroAnterior < NumeroIngresado ; NumeroAnterior++)
-    {
-        if(NumeroIngresado % NumeroAnterior == 0)
-        {
-            AcumDiv = AcumDiv + NumeroAnterior;
-        }
-    }
-
-    if(AcumDiv == NumeroIngresado)
-    {
-        console.log("Es perfecto " + NumeroIngresado);
-    }
-    
-
-
-
-*/
 }//FIN DE LA FUNCIÓN
